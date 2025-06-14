@@ -1,0 +1,29 @@
+Submitted files: overview.txt, hardware.py, components.py, computers.py, testing.py (5)
+
+The classes I have developed relate to computer hardware, such as PCs, laptops, phones and the
+components within them. Each class has instance variables that capture certain characteristics
+of that piece of hardware, such as the manufacturer, the clock speed of a processor and the 
+mobile standard of a phone. Various methods are included to access and change these characteristics
+and to compare different pieces of hardware.
+
+Principles used:
+
+Encapsulation: Each instance variable has a getter and setter, as well as a property. These properties
+are used to access and change the instance variables outside of the class, and the test code does not
+access protected instance variables directly. This allows for error checking.
+Example: In the Computer class, _processor is a protected instance variable, and the Processor property
+is used to access this variable in the test code. The test code uses try-except blocks to verify that
+the error checking works as intended, and there is code to verify that the getters and setters return
+and assign the correct values.
+
+
+Inheritance: Multiple levels of inheritance are used. For example, the Hardware class has the protected
+instance variables _name and _manufacturer. Both a processor and a storage device have these
+characteristics, so the Processor and Storage classes are subclasses of Hardware. The subclasses have the
+additional variables _cores and _size, in an example of extension.
+This can also be seen in the Computer, PortableDevice, Phone and Laptop classes.
+
+
+Composition: A computer is made up of several components, and composition is used to represent this.
+In the Computer class, a Processor object is assigned to the _processor variable, and a Storage object
+is assigned to the _storage variable. Additionally, a PortableDevice object also contains a Battery object.
